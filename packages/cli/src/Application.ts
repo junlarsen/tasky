@@ -48,10 +48,10 @@ export class Application {
      * Run the commands and pipe to stdout
      */
     public async build() {
-        await cp.exec('cd ./.tasky && npm install')
-        const { stdout, stderr } = cp.spawn('cd ./.tasky && tsc && node config.js', { shell: true })
-        stdout.on('data', (d) => {
-            console.log(d.toString())
+        cp.exec('cd ./.tasky && npm install', () => {
+            const { stdout, stderr } = cp.spawn('tsc && node ./.tasky/config.js', { shell: true })
+            stdout.pipe(process.stdout)
+            stderr.pipe(process.stderr)
         })
     }
 

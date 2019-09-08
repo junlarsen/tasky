@@ -1,11 +1,10 @@
-# `cli`
+# `@tasky/cli`
 
-> TODO: description
+The command line interface for the Tasky shell wrapper.
 
 ## Usage
 
 ```
-const cli = require('cli');
-
-// TODO: DEMONSTRATE API
+# Run the config file
+tasky <file.ts>
 ```
