@@ -1,4 +1,7 @@
-import { Tasky } from './core/Tasky'
+import Tasky from './core/Tasky'
+import GitPlugin, { Git } from './plugins/Git'
 
-new Tasky([])
-    .run()
+Tasky
+    .use("git", GitPlugin)
+
+export default Tasky
