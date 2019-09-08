@@ -1,6 +1,6 @@
 {
   "name": "@tasky/core",
-  "version": "0.0.13",
+  "version": "1.0.0",
   "description": "A handy shell task runner",
   "author": "supergrecko <me@supergrecko.com>",
   "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/core#readme",
