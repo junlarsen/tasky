@@ -1,4 +1,5 @@
 import { Plugin } from './Plugin'
+import chalk from 'chalk'
 
 export class Tasky {
 
@@ -29,7 +30,8 @@ export class Tasky {
         const plugin = this.plugins.get(name)
 
         if (plugin === undefined) {
-            throw Error(`Task with name (${name}) has not been defined`)
+            console.log(chalk.redBright(`Error: Task with name (${name}) has not been defined`))
+            return this
         }
 
         callback(plugin as T)
