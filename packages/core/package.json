@@ -1,6 +1,6 @@
 {
   "name": "@tasky/core",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A handy shell task runner",
   "author": "supergrecko <me@supergrecko.com>",
   "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/core#readme",
@@ -21,9 +21,9 @@
     "url": "https://github.com/supergrecko/tasky/issues"
   },
   "dependencies": {
+    "@types/child-process-promise": "^2.2.1",
     "chalk": "^2.4.2",
-    "child-process-promise": "^2.2.1",
-    "@types/child-process-promise": "^2.2.1"
+    "child-process-promise": "^2.2.1"
   },
   "gitHead": "d1fd6d33fa01733b5f03961bd948cf369bb8fa8f",
   "private": false,
