@@ -1,4 +1,4 @@
-import { Plugin, TaskyApp, task } from '@tasky/core'
+import { Plugin, task } from '@tasky/core'
 
 export class GitPlugin implements Plugin {
     public async pull() {
