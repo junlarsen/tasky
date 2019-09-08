@@ -1,5 +1,5 @@
 import Tasky from './core/Tasky'
-import GitPlugin, { Git } from './plugins/Git'
+import GitPlugin  from './plugins/Git'
 
 Tasky
     .use("git", GitPlugin)

@@ -1,0 +1,29 @@
+{
+  "name": "@tasky/core",
+  "version": "0.0.1",
+  "description": "A handy shell task runner",
+  "author": "supergrecko <me@supergrecko.com>",
+  "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/core#readme",
+  "license": "MIT",
+  "main": "build/App.js",
+  "directories": {
+    "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supergrecko/tasky.git"
+  },
+  "scripts": {
+    "ts": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/supergrecko/tasky/issues"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "child-process-promise": "^2.2.1"
+  },
+  "devDependencies": {
+    "@types/child-process-promise": "^2.2.1"
+  }
+}
