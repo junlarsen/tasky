@@ -1,0 +1,24 @@
+{
+  "name": "@tasky/git",
+  "version": "0.0.4",
+  "description": "A git command plugin for Tasky",
+  "author": "supergrecko <me@supergrecko.com>",
+  "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/git#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supergrecko/tasky.git"
+  },
+  "scripts": {
+    "ts": "tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/supergrecko/tasky/issues"
+  },
+  "dependencies": {
+    "@tasky/core": "^0.0.4"
+  }
+}
