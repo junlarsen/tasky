@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "node build/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "@types/child-process-promise": "^2.2.1",
+    "chalk": "^2.4.2",
     "child-process-promise": "^2.2.1"
   }
 }
