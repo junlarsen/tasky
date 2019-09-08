@@ -1,11 +1,15 @@
 # `@tasky/git`
 
-> TODO: description
+This is a plugin to interact with Git using Tasky.
 
 ## Usage
 
-```
-const git = require('@tasky/git');
+```ts
+import Tasky from '@tasky/core'
+import GitPlugin, { Git } from '@tasky/git'
 
-// TODO: DEMONSTRATE API
+Tasky.use("git", GitPlugin")
+Tasky.task<Git>("git", (git) => {
+  git.pull()
+})
 ```

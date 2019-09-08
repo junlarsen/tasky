@@ -36,16 +36,26 @@ export class Command {
     public async execute(maxBuffer: number = 4096 * 4096): Promise<void> {
         const command = `${this.basename} ${this.arguments.join(' ')}`
 
-        const { stderr, stdout } = await exec(command, { maxBuffer })
+        try {
+            const { stderr, stdout } = await exec(command, { maxBuffer })
 
-        if (stderr) {
-            console.log(chalk.redBright(stderr))
+            if (stderr) {
+                this.error(stderr)
+            }
+
+            console.log(
+                chalk.green(`Task \`${command}:\``),
+                chalk.white(stdout)
+            )
+
+        } catch (err) {
+            this.error(err)
+            return
         }
+    }
 
-        console.log(
-            chalk.green(`Task \`${command}:\``),
-            chalk.white(stdout)
-        )
+    private error(message: string) {
+        console.log(chalk.redBright(message))
     }
 
 }
