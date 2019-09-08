@@ -5,7 +5,7 @@
   "author": "supergrecko <me@supergrecko.com>",
   "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/core#readme",
   "license": "MIT",
-  "main": "build/App.js",
+  "main": "build/index.js",
   "directories": {
     "lib": "src"
   },
@@ -14,7 +14,8 @@
     "url": "git+https://github.com/supergrecko/tasky.git"
   },
   "scripts": {
-    "ts": "tsc"
+    "ts": "npx tsc",
+    "prepublish": "npx tsc"
   },
   "bugs": {
     "url": "https://github.com/supergrecko/tasky/issues"
