@@ -41,6 +41,22 @@ Tasky.task("custom", () => {
 })
 ```
 
+## What if I want to use my own dependencies?
+
+If you have your own dependencies or require external dependencies inside your config you can create a `tasky.json` file.
+
+This file should be an object with all the dependencies you're going to use. This is an example file which would grab the standard packages.
+
+```json
+{
+  "@tasky/core": "^1.0.0",
+  "@tasky/git": "^1.0.0",
+  "@tasky/npm": "^1.0.0"
+}
+```
+
+Tasky automatically detects this file and will use these dependencies instead of the standard ones.
+
 ## Why not use a shell?
 
 Good question, I didn't quite feel like using bash so I made this.
