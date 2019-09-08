@@ -26,5 +26,10 @@
     "@types/fs-extra": "^8.0.0",
     "chalk": "^2.4.2",
     "fs-extra": "^8.1.0"
-  }
+  },
+  "gitHead": "eb934a1c898152a0a6cea86240daa3c67e28e07a",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false
 }

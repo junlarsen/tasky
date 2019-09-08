@@ -25,7 +25,7 @@
     "chalk": "^2.4.2",
     "child-process-promise": "^2.2.1"
   },
-  "gitHead": "d1fd6d33fa01733b5f03961bd948cf369bb8fa8f",
+  "gitHead": "eb934a1c898152a0a6cea86240daa3c67e28e07a",
   "private": false,
   "publishConfig": {
     "access": "public"

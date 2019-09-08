@@ -22,5 +22,6 @@
   },
   "dependencies": {
     "@tasky/core": "^0.0.9"
-  }
+  },
+  "gitHead": "eb934a1c898152a0a6cea86240daa3c67e28e07a"
 }
