@@ -1,0 +1,10 @@
+{
+  "name": "@tasky/build",
+  "version": "1.0.0",
+  "description": "The compiler output from Tasky",
+  "license": "MIT",
+  "dependencies": {
+    "@tasky/core": "^0.0.8",
+    "@tasky/git": "^0.0.8"
+  }
+}
