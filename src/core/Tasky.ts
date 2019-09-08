@@ -1,23 +1,43 @@
-import cp from 'child-process-promise'
-import { Plugin } from './Plugin';
+import { Plugin } from './Plugin'
+export { task } from './Task'
 
 export class Tasky {
 
-    public constructor(private plugins: Array<Plugin>) {
-    }
+    /**
+     * Name to Plugin map of registered plugins
+     */
+    private plugins: Map<string, Plugin> = new Map()
 
-    public use(plugin: Plugin): Tasky {
-        this.plugins.push(plugin)
+    /**
+     * Register a plugin
+     *
+     * @param name
+     * @param plugin
+     */
+    public use(name: string, plugin: Plugin): Tasky {
+        this.plugins.set(name, plugin)
 
         return this
     }
 
-    public plugin(name: string): Plugin {
-        return this.plugins.filter((p: Plugin) => p.name === name)[0]
-    }
+    /**
+     * Run a task and get the task in the callback
+     *
+     * @param name
+     * @param callback
+     */
+    public task<T extends Plugin>(name: string, callback: (plugin: T) => void): Tasky {
+        const plugin = this.plugins.get(name)
 
-    public run(): void {
+        if (plugin === undefined) {
+            throw Error(`Task with name (${name}) has not been defined`)
+        }
 
+        callback(plugin as T)
+
+        return this
     }
 
 }
+
+export default new Tasky()

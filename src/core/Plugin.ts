@@ -1,8 +1,8 @@
 import { Tasky } from './Tasky'
-import { Task } from './Task'
 
+/**
+ * Definition for any Tasky plugin
+ */
 export interface Plugin {
-    name: string
-    tasks: Array<Task>
-    run: (app: Tasky) => boolean
+    run(app: Tasky): boolean
 }
