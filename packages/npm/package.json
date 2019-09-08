@@ -1,0 +1,27 @@
+{
+  "name": "@tasky/npm",
+  "version": "0.0.13",
+  "description": "A npm command plugin for Tasky",
+  "author": "supergrecko <me@supergrecko.com>",
+  "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/git#readme",
+  "license": "MIT",
+  "main": "build/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supergrecko/tasky.git"
+  },
+  "scripts": {
+    "ts": "npx tsc",
+    "prepublish": "npx tsc"
+  },
+  "bugs": {
+    "url": "https://github.com/supergrecko/tasky/issues"
+  },
+  "dependencies": {
+    "@tasky/core": "^0.0.13"
+  },
+  "gitHead": "eb934a1c898152a0a6cea86240daa3c67e28e07a"
+}
