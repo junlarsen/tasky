@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Application } from './Application'
 
 async function main() {
