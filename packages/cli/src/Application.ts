@@ -39,6 +39,13 @@ export class Application {
             this.panic(`Specified file (${path}) does not exist.`)
         }
 
+        if (fs.existsSync(`${process.cwd()}/tasky.json`)) {
+            const file = await fs.readFile(`${process.cwd()}/tasky.json`, 'utf8')
+            const tasky = JSON.parse(file)
+
+            npm.dependencies = tasky
+        }
+
         await fs.copyFile(path, `${outdir}/config.ts`)
         await fs.writeFile(`${outdir}/package.json`, JSON.stringify(npm))
         await fs.writeFile(`${outdir}/tsconfig.json`, JSON.stringify(tsconfig))
@@ -49,7 +56,7 @@ export class Application {
      */
     public async build() {
         cp.exec('cd ./.tasky && npm install', () => {
-            const { stdout, stderr } = cp.spawn('cd ./.tasky && npx tsc config.ts && node config.js', { shell: true })
+            const { stdout, stderr } = cp.spawn('npx tsc ./.tasky/config.ts && node ./.tasky/config.js', { shell: true })
             stdout.pipe(process.stdout)
             stderr.pipe(process.stderr)
         })

@@ -15,7 +15,8 @@
   },
   "scripts": {
     "ts": "npx tsc",
-    "prepublish": "npx tsc"
+    "prepublish": "npx tsc",
+    "dev": "node build/src/App.js"
   },
   "bugs": {
     "url": "https://github.com/supergrecko/tasky/issues"
