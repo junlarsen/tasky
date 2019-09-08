@@ -1,6 +1,6 @@
 import { Plugin, task } from '@tasky/core'
 
-export class GitPlugin implements Plugin {
+export class Git implements Plugin {
     public async pull() {
         await task("git")
             .addArgument("pull")

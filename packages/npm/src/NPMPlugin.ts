@@ -1,19 +1,21 @@
 import { Plugin, task } from '@tasky/core'
 
-export class NPMPlugin implements Plugin {
-    public async install(dev: boolean, ...packages: Array<string>) {
-        const t = task("npm")
-            .addArgument("install")
+export interface NPMInstallOptions {
+    devDependency?: boolean
+    global?: boolean
+}
 
-        packages.forEach((it: string) => {
-            t.addArgument(it)
-        })
+export class NPM implements Plugin {
+    public async install(options: NPMInstallOptions = {}, ...packages: Array<string>) {
+        const job = task("npm")
+            .addArgument("i")
 
-        if (dev) {
-            t.addOption('-D')
-        }
+        packages.forEach((it: string) => job.addArgument(it))
 
-        await t.execute()
+        if (options.devDependency) job.addOption('-D')
+        if (options.global) job.addOption('-g')
+
+        await job.execute()
     }
 
     public async runScript(name: string) {

@@ -1,4 +1,3 @@
-export { NPMPlugin as NPM } from './src/NPMPlugin'
-import { NPMPlugin } from './src/NPMPlugin'
-
-export default new NPMPlugin()
+import { NPM, NPMInstallOptions }  from './src/NPMPlugin'
+export { NPM, NPMInstallOptions }
+export default new NPM()

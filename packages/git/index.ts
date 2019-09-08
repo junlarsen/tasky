@@ -1,4 +1,3 @@
-export { GitPlugin as Git } from './src/GitPlugin'
-import { GitPlugin } from './src/GitPlugin'
-
-export default new GitPlugin()
+import { Git }  from './src/GitPlugin'
+export { Git }
+export default new Git()
