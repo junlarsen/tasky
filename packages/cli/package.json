@@ -1,0 +1,36 @@
+{
+  "name": "@tasky/cli",
+  "version": "0.0.8",
+  "description": "The command line interface for Tasky",
+  "author": "supergrecko <me@supergrecko.com>",
+  "homepage": "https://github.com/supergrecko/tasky/tree/master/packages/cli#readme",
+  "license": "MIT",
+  "main": "build/index.js",
+  "bin": {
+    "tasky": "build/src/App.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supergrecko/tasky.git"
+  },
+  "scripts": {
+    "ts": "npx tsc",
+    "prepublish": "npx tsc && npm run build",
+    "build": "npx tsc && npx pkg . --target node10-win-x86,node10-linux-x64,node10-win-x64,node10-macos-x64 --output ./bin/tasky.exe"
+  },
+  "bugs": {
+    "url": "https://github.com/supergrecko/tasky/issues"
+  },
+  "dependencies": {
+    "@tasky/core": "^0.0.8",
+    "@tasky/git": "^0.0.8",
+    "@types/fs-extra": "^8.0.0",
+    "fs-extra": "^8.1.0",
+    "pkg": "^4.4.0",
+    "chalk": "^2.4.2"
+  },
+  "pkg": {
+    "scripts": ["build/src/App.js"],
+    "assets": ["assets/*"]
+  }
+}
