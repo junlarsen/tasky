@@ -1,5 +1,4 @@
 import { Plugin } from './Plugin'
-export { task } from './Task'
 
 export class Tasky {
 

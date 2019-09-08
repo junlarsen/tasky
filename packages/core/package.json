@@ -26,7 +26,7 @@
   "devDependencies": {
     "@types/child-process-promise": "^2.2.1"
   },
-  "gitHead": "61aa69ba20d98108c011e0934851bcc5f8f0bec7",
+  "gitHead": "c559a68d6f4e1d8727259462bb87e6dcb5fa3dab",
   "private": false,
   "publishConfig": {
     "access": "public"
