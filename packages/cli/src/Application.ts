@@ -56,7 +56,7 @@ export class Application {
      */
     public async build() {
         cp.exec('cd ./.tasky && npm install', () => {
-            const { stdout, stderr } = cp.spawn('npx tsc ./.tasky/config.ts && node ./.tasky/config.js', { shell: true })
+            const { stdout, stderr } = cp.spawn('npx tsc --project ./.tasky && node ./.tasky/config.js', { shell: true })
             stdout.pipe(process.stdout)
             stderr.pipe(process.stderr)
         })
