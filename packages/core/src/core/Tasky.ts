@@ -1,12 +1,22 @@
 import { Plugin } from './Plugin'
 import chalk from 'chalk'
 
+export class Task<T> {
+    public constructor(public callback: (...args: any) => any, public plugin: Plugin) {}
+
+    public async run() {
+        await this.callback(this.plugin as T)
+    }
+}
+
 export class Tasky {
 
     /**
      * Name to Plugin map of registered plugins
      */
     private plugins: Map<string, Plugin> = new Map()
+
+    private tasks: Array<Task<any>> = []
 
     /**
      * Register a plugin
@@ -34,9 +44,21 @@ export class Tasky {
             return this
         }
 
-        callback(plugin as T)
+        this.tasks.push(new Task<T>(callback, plugin))
 
         return this
+    }
+
+    /**
+     * Runs all listed tasks
+     */
+    public async run() {
+        if (this.tasks.length > 0) {
+            await this.tasks[0].run()
+            this.tasks.shift()
+
+            await this.run()
+        }
     }
 
 }
