@@ -4,8 +4,8 @@
   "description": "The compiler output from Tasky",
   "license": "MIT",
   "dependencies": {
-    "@tasky/core": "^1.0.0",
-    "@tasky/git": "^1.0.0",
-    "@tasky/npm": "^1.0.0"
+    "@tasky/core": "*",
+    "@tasky/git": "*",
+    "@tasky/npm": "*"
   }
 }
