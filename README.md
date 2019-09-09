@@ -22,7 +22,7 @@ import GitPlugin, { Git } from '@tasky/git'
 Tasky.use("git", GitPlugin)
     .task<Git>("git", async (git) => {
         await git.pull()
-    })
+    }).run()
 ```
 
 You can now execute this task via `tasky task.ts`.
@@ -38,7 +38,7 @@ Tasky.task("custom", async () => {
     await task("npm")
         .addArgument("install")
         .execute()
-})
+}).run()
 ```
 
 ## What if I want to use my own dependencies?
