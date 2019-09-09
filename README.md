@@ -20,8 +20,8 @@ import Tasky from '@tasky/core'
 import GitPlugin, { Git } from '@tasky/git'
 
 Tasky.use("git", GitPlugin)
-    .task<Git>("git", (git) => {
-        git.pull()
+    .task<Git>("git", async (git) => {
+        await git.pull()
     })
 ```
 
@@ -34,8 +34,8 @@ You can use the `task` import along with the `"custom"` identifier to execute yo
 ```ts
 import Tasky, { task } from '@tasky/core'
 
-Tasky.task("custom", () => {
-    task("npm")
+Tasky.task("custom", async () => {
+    await task("npm")
         .addArgument("install")
         .execute()
 })
