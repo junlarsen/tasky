@@ -22,5 +22,6 @@ export class NPM implements Plugin {
         await task("npm")
             .addArgument("run")
             .addArgument(name)
+            .execute()
     }
 }
