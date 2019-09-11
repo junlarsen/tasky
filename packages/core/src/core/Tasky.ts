@@ -1,5 +1,11 @@
 import { Plugin } from './Plugin'
 import chalk from 'chalk'
+import { Git } from '@tasky/git'
+
+interface MapPlugin {
+    git: Git
+    [key: string]: any
+}
 
 export class Task<T> {
     public constructor(public callback: (...args: any) => any, public plugin: Plugin) {}
@@ -36,6 +42,7 @@ export class Tasky {
      * @param name
      * @param callback
      */
+    public task<T extends MapPlugin[K], K extends keyof MapPlugin = any>(name: K, callback: (plugin: T) => void): Tasky;
     public task<T extends Plugin>(name: string, callback: (plugin: T) => void): Tasky {
         const plugin = this.plugins.get(name)
 
